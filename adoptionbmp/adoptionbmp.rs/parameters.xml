@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<parameters>
+
+	<parameter name="randomSeed"
+		displayName="Default Random Seed" type="int" defaultValue="1000"
+		isReadOnly="false"
+		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
+		
+	<parameter name="climateTempImpact"
+		displayName="CLIMATE_TEMP_IMPACT" type="double" defaultValue="0.1" />
+
+	<parameter name="climatePrecipImpact"
+		displayName="CLIMATE_PRECIP_IMPACT" type="double" defaultValue="0.2" />
+		
+	<parameter name="startYear"
+		displayName="startYear" type="int" defaultValue="2016" />
+
+</parameters>

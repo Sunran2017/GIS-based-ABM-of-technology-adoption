@@ -1,0 +1,8 @@
+<model name="Adoption_BMP"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://repast.org/scenario/user_path">
+	<classpath>
+		<agents path="../bin" filter="adoptionbmp.*" />
+		<entry path="../lib" />
+	</classpath>
+</model>
