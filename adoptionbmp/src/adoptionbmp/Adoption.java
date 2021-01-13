@@ -5,6 +5,7 @@ public class Adoption {
 	//CDSI type
 	enum typeCDSI {manual, auto, remoteControl};
 	static int type = 1;
+	
 
 	
 	//CDSI investment costs
@@ -20,7 +21,6 @@ public class Adoption {
 	static double[] remoteControl = {Constants.invCostHighRc, Constants.annualCostHighRc, 
             Constants.invCostMedRc, Constants.annualCostMedRc,
             Constants.invCostLowRc, Constants.annualCostLowRc};
-	
 	
 	
 	

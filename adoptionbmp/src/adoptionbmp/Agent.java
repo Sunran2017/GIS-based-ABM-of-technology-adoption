@@ -74,9 +74,7 @@ public class Agent {
 	public boolean 					CDSIPotential = false ;		//True if the land is feasible for CDSI
 	public boolean					adoptedFD = false ;	         // True if adopted FD
 	public double 					fdAcres;
-	
-	
-	
+		
 	public boolean					adoptedCDSI = false;	// True if adopted CDSI
 	
 	public int						adoptedYear;		//The year when adoptedCDSI
@@ -259,7 +257,6 @@ public class Agent {
 
 	
 	//Step 2: Adoption;	
-	
 
 	
 	@ScheduledMethod(start = 1, interval = 1)
@@ -268,41 +265,93 @@ public class Agent {
 		//FD diffusion 
 		
 		if(!adoptedFD && (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin) 
-						&& this.rateFDwithNet() > 0.8 ) {
-			
+						&& this.rateFDwithNet() > Constants.FDRateThreshold) {
 			adoptedFD = true;	
 		}
+		//Base adoption
+		baseSenario(0);
 		
-		
-		baseSenario(1);
-	
-	
 		//Base Adoption Networking Scenario: including Learning costs
 		adoptionWithLearningCosts();
+		
+		
+		//Policy 
+		if(Policy.policySenario == 1) {
+			for(int i = 1; i <= 10;i++) {
+				costShareSenario(i);
+			}	
+		}else if (Policy.policySenario == 2) {
+			for(int i = 1; i <= 10;i++) {
+				costShareSenario(i);
+			}
+		}
 		
 		curYear += 1;	
 	}
 	
-	//Base senario 1calculate npv and decide adoption without network
+	
+	
+	
+	
+	
+	//Base scenario 1calculate npv and decide adoption without network
 	
 	public void baseSenario(int cnt) throws Exception {
 		if(Adoption.type == 1) {
-			this.calNpv(Adoption.manual);
+			this.calNpv(Adoption.manual,0,0);
 			adoption("manual",cnt);
 		}else if(Adoption.type == 2) {
-			this.calNpv(Adoption.auto);
+			this.calNpv(Adoption.auto,0,0);
 			adoption("auto",cnt);
 		}else {
-			this.calNpv(Adoption.remoteControl);
+			this.calNpv(Adoption.remoteControl,0,0);
 			adoption("remoteControl",cnt);	
 		}	
 	}
 	
 	
 	
+	//cost-share scenario  
+	
+	public void costShareSenario(int cnt) throws Exception{
+		
+		if(Adoption.type == 1) {
+			this.calNpv(Adoption.manual,Policy.shareRate[cnt],0);
+			adoption("manual",cnt);
+		}else if(Adoption.type == 2) {
+			this.calNpv(Adoption.auto,Policy.shareRate[cnt],0);
+			adoption("auto",cnt);
+		}else {
+			this.calNpv(Adoption.remoteControl,Policy.shareRate[cnt],0);
+			adoption("remoteControl",cnt);	
+		}	
+	}
+	
+	//interest rate support scenario
+	public void intrSupSenario(int cnt) throws Exception{
+
+		if(Adoption.type == 1) {
+			this.calNpv(Adoption.manual,0,Policy.intrSup[cnt]);
+			adoption("manual",cnt);
+		}else if(Adoption.type == 2) {
+			this.calNpv(Adoption.auto,0,Policy.intrSup[cnt]);
+			adoption("auto",cnt);
+		}else {
+			this.calNpv(Adoption.remoteControl,0,Policy.intrSup[cnt]);
+			adoption("remoteControl",cnt);	
+		}	
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 
 	// Calculate npv of CDSI investment
-	public void calNpv(double[] arr) throws Exception {
+	public void calNpv(double[] arr, double shareRate,double investSubRate) throws Exception {
 
 		double invReturn = 0;
 		double invCostPerAcre = 0;
@@ -322,13 +371,13 @@ public class Agent {
 			annalCostPerAcre  = arr[5];
 		}		
 		
-		totalInvCost = invCostPerAcre * farmSize;
+		totalInvCost = invCostPerAcre * farmSize * (1 - shareRate);
 		
 		if(remainYear >= Constants.lifeExpect) {
 			for(int i = curYear; i <= curYear + Constants.lifeExpect; i++) {
 				//System.out.println( id + "\n"+ "profit from "+ i + "\n"+ profit.get(i));
 				if(profit.get(i) != null) {
-					invReturn += Constants.diffYields * profit.get(i)/Math.pow(1 + Constants.r, i-curYear);			
+					invReturn += Constants.diffYields * profit.get(i)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), i-curYear);			
 				}
 			}
 
@@ -340,7 +389,7 @@ public class Agent {
 			double avgReturn = 0;
 			for(int j = curYear; j <= endYear; j++) {
 				if(profit.get(j) != null) {
-					invReturn += Constants.diffYields * profit.get(j)/Math.pow(1 + Constants.r, j-curYear);
+					invReturn += Constants.diffYields * profit.get(j)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), j-curYear);
 								
 				}	
 				cnt +=1;
@@ -370,7 +419,7 @@ public class Agent {
 		}
 		
 		try {
-			writeAdoption(Constants.pathAdoption1);
+			writeAdoption(Constants.pathAdoption1 + String.valueOf(cnt) +  ".csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -45,10 +45,9 @@ public class ContextCreator implements ContextBuilder<Object> {
 	int numAgents = 933;					//total number of farm at starting year 933
 	int period 	= 34;						//2016-2049 : 34
 	static int startYear = 2016;			//start year at 2016
-	int dist = 2000;     					// the distance for deciding neighbor 
+	static int dist = 2000;     					// the distance for deciding neighbor 
 	static boolean  climateChange = false;  // whether consider the impacts of climate change on yields
 
-	
 	
 
 	//networking

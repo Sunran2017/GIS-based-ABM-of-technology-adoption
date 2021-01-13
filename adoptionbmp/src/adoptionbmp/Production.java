@@ -127,7 +127,7 @@ public class Production {
 			curWheatPrice = Sup.getNormalDouble(curWheatPrice, sdWheatPrice);
 			
 					
-			System.out.println("Ajusted corn price : " + curCornPrice + " at " + currentYear);
+			//System.out.println("Adjusted corn price : " + curCornPrice + " at " + currentYear);
 			
 		}
 				

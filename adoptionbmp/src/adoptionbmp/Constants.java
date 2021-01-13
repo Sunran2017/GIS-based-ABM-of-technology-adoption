@@ -16,6 +16,12 @@ public interface Constants {
 	double acreToM2 = 4046.86;
 	double phi = 3.1415;
 	
+	// file path for output
+	
+	String pathProduction = "/Users/ran/ABM/ProductionResults" + String.valueOf(ContextCreator.climateChange) + String.valueOf(ContextCreator.dist) + ".csv";   	// production results path
+	String pathAdoption1 = "/Users/ran/ABM/adoptionResults" + String.valueOf(Policy.policySenario) + "_";														// adoption results path
+	String pathAdoption2 = "/Users/ran/ABM/adoptionResults2";					// adoption results path
+	String pathAdoption3 = "/Users/ran/ABM/adoptionResults3";					// adoption results path
 	
 	// alpha and beta for yields estimation:
 	
@@ -152,7 +158,7 @@ public interface Constants {
 	
 	//CDSI investment return rate
 	
-	double r = 0.0495;
+	double investReturnRate = 0.0495;
 	
 	
 	//investment cost
@@ -222,13 +228,7 @@ public interface Constants {
 	int ageGap = 20;
 	int avgAge = 58;
 	
-
-	// save file path
-	
-	String pathProduction = "/Users/ran/ABM/agentsProductionResults.csv";   		// production results path
-	
-	String pathAdoption1 = "/Users/ran/ABM/adoptionResults1.csv";					// adoption results path
-	String pathAdoption2 = "/Users/ran/ABM/adoptionResults2.csv";					// adoption results path
-	String pathAdoption3 = "/Users/ran/ABM/adoptionResults3.csv";					// adoption results path
+	//FD
+	double FDRateThreshold = 0.6;
 	
 }
