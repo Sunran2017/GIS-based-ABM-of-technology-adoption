@@ -27,6 +27,7 @@ import repast.simphony.context.space.graph.NetworkBuilder;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.gis.util.GeometryUtil;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.space.gis.Geography;
 import repast.simphony.space.gis.GeographyParameters;
 import repast.simphony.space.graph.Network;
@@ -45,9 +46,11 @@ public class ContextCreator implements ContextBuilder<Object> {
 	int numAgents = 933;					//total number of farm at starting year 933
 	int period 	= 34;						//2016-2049 : 34
 	static int startYear = 2016;			//start year at 2016
-	static int dist = 2000;     					// the distance for deciding neighbor 
+	static int dist = 1000;     			// the distance for deciding neighbor 
 	static boolean  climateChange = false;  // whether consider the impacts of climate change on yields
-
+	static int costShare = 0;				// costShare program scenarios
+	static int intrSup = 0;					//interest credits program scenarios
+	static int policySenario = 0;
 	
 
 	//networking
@@ -58,15 +61,30 @@ public class ContextCreator implements ContextBuilder<Object> {
 	
 	@Override
 	public Context<Object> build(Context<Object> context) {
-		//generate output file
+		
+		//generate output file for multiple run
+		
+		try {
+			Sup.fileCreate(Constants.pathProduction);	
+			Sup.fileCreate(Constants.runRecord);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		
+		/*
 		try {
 			Sup.fileCheck(Constants.pathProduction);
-			Sup.fileCheck(Constants.pathAdoption1);
+			//Sup.fileCheck(Constants.pathAdoption1);
 			//Sup.fileCheck(Constants.pathAdoption2);
 			//Sup.fileCheck(Constants.pathAdoption3);
 		} catch (IOException e1) {
 			e1.printStackTrace();
-		}
+		}	
+		*/
+		
 		
 		//create the geography using a factory to make sure that it is initialized
 		GeographyParameters geoParams = new GeographyParameters();		
@@ -193,7 +211,11 @@ public class ContextCreator implements ContextBuilder<Object> {
 				//if agent is active at current year;	
 				try { 
 					agent.production(tk, Production.term);
-					System.out.println("Complete production calculation for agent:" + agent.id + " at " + tk + "\n");
+					
+					if(Integer.parseInt(agent.id) % 100 == 0 && tk == 34) {
+						System.out.println("Complete production calculation for agent:" + agent.id + " at " + tk + "\n");	
+					}
+					
 					sumCornAcre += agent.cornAcre;
 					sumSoyAcre += agent.soyAcre;
 					sumWheatAcre += agent.wheatAcre;
@@ -307,9 +329,17 @@ public class ContextCreator implements ContextBuilder<Object> {
 					}		
 				}
 			}
+							
+			if(tk == 2049) {
+				System.out.println("Total number of agent : " + agentList.size() + " at " + tk + "\n");
+				String writeList =  String.valueOf(agentList.size())
+									+ "," + climateChange
+									+ "," + dist
+									+ "," + costShare
+									+ "," + intrSup ;
+				Sup.writeText(Constants.runRecord,writeList );			
+			}
 			
-			
-			System.out.println("Total number of agent : " + agentList.size() + " at " + tk + "\n");
 			
 			//System.out.println("closedAgent number : " + closedAgent.size() + " at " + tk + "\n");
 			//System.out.println("closedAgent number because of low profit : " + cnt1 + " at " + tk + "\n");
@@ -380,12 +410,20 @@ public class ContextCreator implements ContextBuilder<Object> {
 			}
 		}
 		
+		
+		Parameters params = RunEnvironment.getInstance().getParameters();
+
+		
 		//2016 -- 2049: 34 years
 		RunEnvironment.getInstance().endAt(period);	
+		
+		
 		return context;
+			
 	}
 
 	
+
 	//Agent get buyer
 	private Agent getBuyer(Agent agent, int tk) {
 		Map<Agent,Double> neighbourProfit = new HashMap<Agent, Double>();

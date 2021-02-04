@@ -1,0 +1,9 @@
+model.archive = /Users/ran/eclipse-workspace/adoptionbmp/output/complete_model.jar
+batch.params.file = scenario.rs/batch_params.xml
+ssh.key_dir = /Users/ran/.ssh
+poll.frequency = 60.0
+model.output = /Users/ran/eclipse-workspace/adoptionbmp/output
+
+vm.arguments = 
+local.0.instances = 2
+local.0.working_directory = /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/

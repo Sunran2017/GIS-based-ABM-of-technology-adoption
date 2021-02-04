@@ -1,5 +1,1 @@
-<?xml version="1.0" ?>
-<sweep runs="1">
-	<parameter name="randomSeed" type="constant"
-		constant_type="int" value="1000"></parameter>
-</sweep>
+<?xml version="1.0" ?><sweep runs="1"><parameter name="randomSeed" type="constant" constant_type="int" value="1000"></parameter><parameter name="climateTempImpact" type="constant" constant_type="double" value="0.1"></parameter><parameter name="climatePrecipImpact" type="constant" constant_type="double" value="0.2"></parameter><parameter name="startYear" type="constant" constant_type="int" value="2016"></parameter></sweep>

@@ -250,3 +250,471 @@ Caused by: java.lang.ArithmeticException: / by zero
 	at adoptionbmp.Agent.rateFDwithNet(Agent.java:434)
 	at adoptionbmp.Agent.adoptionDecision(Agent.java:277)
 	... 10 more
+INFO  [AWT-EventQueue-0] 2021-01-29 01:30:52,496 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /Users/ran/eclipse-workspace/adoptionbmp/output/config.props
+INFO  [AWT-EventQueue-0] 2021-01-29 01:30:52,609 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/Users/ran/eclipse-workspace/adoptionbmp/batch/batch_params.xml to
+	/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/unrolledParamFile.txt
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:31:13,668 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/ran_localhost6449728246852094999.zip to 
+/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611905466500 ...
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:31:14,454 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:31:14,455 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0.1326
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:31:14,456 repast.simphony.batch.ssh.LocalSession - Unzipping model /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611905466500/ran_localhost6449728246852094999.zip
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:31:16,111 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-19] 2021-01-29 01:31:39,569 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.97
+INFO  [Thread-19] 2021-01-29 01:31:39,764 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.296
+INFO  [Thread-19] 2021-01-29 01:31:40,706 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.4492
+INFO  [Thread-19] 2021-01-29 01:31:40,781 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.4756
+INFO  [Thread-19] 2021-01-29 01:31:41,017 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.5043
+INFO  [Thread-19] 2021-01-29 01:31:41,067 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.5191
+INFO  [Thread-19] 2021-01-29 01:31:41,594 repast.simphony.batch.ssh.LocalSession - ==> shapefile load succuss...
+INFO  [Thread-19] 2021-01-29 01:31:41,629 repast.simphony.batch.ssh.LocalSession - ==> Production data loading successly
+INFO  [Thread-19] 2021-01-29 01:31:42,002 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...1
+INFO  [Thread-19] 2021-01-29 01:31:48,432 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...101
+INFO  [Thread-19] 2021-01-29 01:31:53,123 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...201
+INFO  [Thread-19] 2021-01-29 01:31:57,363 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...301
+INFO  [Thread-19] 2021-01-29 01:32:01,911 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...401
+INFO  [Thread-19] 2021-01-29 01:32:06,093 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...501
+INFO  [Thread-19] 2021-01-29 01:32:10,498 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...601
+INFO  [Thread-19] 2021-01-29 01:32:14,729 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...701
+INFO  [pool-23-thread-1] 2021-01-29 01:32:16,128 repast.simphony.batch.ssh.LocalDonePoller - Polled /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611905466500 for DONE:  no
+INFO  [Thread-19] 2021-01-29 01:32:19,559 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...801
+INFO  [Thread-19] 2021-01-29 01:32:24,791 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...901
+INFO  [Thread-19] 2021-01-29 01:32:26,622 repast.simphony.batch.ssh.LocalSession - Start simulation for this agent :1 at 2016
+INFO  [Thread-19] 2021-01-29 01:32:26,641 repast.simphony.batch.ssh.LocalSession - ERROR [main] 01:32:26,639 repast.simphony.batch.InstanceRunner - Error while running model
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - java.lang.UnsatisfiedLinkError: no lpsolve55j in java.library.path
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1867)
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at java.lang.System.loadLibrary(System.java:1122)
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at lpsolve.LpSolve.<clinit>(LpSolve.java:275)
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at adoptionbmp.Agent.production(Agent.java:159)
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at adoptionbmp.ContextCreator.build(ContextCreator.java:195)
+INFO  [Thread-19] 2021-01-29 01:32:26,642 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+INFO  [Thread-19] 2021-01-29 01:32:26,643 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+INFO  [Thread-19] 2021-01-29 01:32:26,643 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+INFO  [Thread-19] 2021-01-29 01:32:26,643 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+INFO  [Thread-19] 2021-01-29 01:32:26,643 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.OneRunBatchRunner.run(OneRunBatchRunner.java:101)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.InstanceRunner.run(InstanceRunner.java:195)
+INFO  [Thread-19] 2021-01-29 01:32:26,644 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.InstanceRunner.main(InstanceRunner.java:217)
+INFO  [pool-23-thread-1] 2021-01-29 01:33:16,136 repast.simphony.batch.ssh.LocalDonePoller - Polled /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611905466500 for DONE:  yes
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:33:16,136 repast.simphony.batch.ssh.SessionsDriver - Run Time: 2.0280
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:33:16,163 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611905466500
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:33:16,194 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /Users/ran/eclipse-workspace/adoptionbmp/output
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:33:16,195 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0.0010
+INFO  [SwingWorker-pool-22-thread-1] 2021-01-29 01:33:16,195 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 2.1617
+FATAL [Thread-19] 2021-01-29 05:41:38,353 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.reflect.InvocationTargetException
+	at adoptionbmp.Agent$$FastClassByCGLIB$$aa86b9e4.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.ArithmeticException: / by zero
+	at adoptionbmp.Agent.rateCDSIwithNet(Agent.java:509)
+	at adoptionbmp.Agent.adoptionWithNet(Agent.java:320)
+	at adoptionbmp.Agent.adoptionDecision(Agent.java:276)
+	... 10 more
+FATAL [Thread-19] 2021-01-29 13:33:39,996 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (18.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.reflect.InvocationTargetException
+	at adoptionbmp.Agent$$FastClassByCGLIB$$aa86b9e4.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at adoptionbmp.Agent.adoption(Agent.java:440)
+	at adoptionbmp.Agent.costShareSenario(Agent.java:350)
+	at adoptionbmp.Agent.costShareSenario1(Agent.java:298)
+	... 10 more
+FATAL [Thread-19] 2021-01-29 14:28:31,558 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.reflect.InvocationTargetException
+	at adoptionbmp.Agent$$FastClassByCGLIB$$aa86b9e4.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at adoptionbmp.Agent.adoption(Agent.java:415)
+	at adoptionbmp.Agent.costShareSenario(Agent.java:326)
+	at adoptionbmp.Agent.adoptionDecision(Agent.java:273)
+	... 10 more
+ERROR [AWT-EventQueue-0] 2021-01-29 16:20:41,644 repast.simphony.ui.RSApplication - Error while initializing simulation
+repast.simphony.parameter.IllegalParameterException: Parameter 'costShareSenario' not found in the schema.
+	at repast.simphony.parameter.DefaultParameters.getValue(DefaultParameters.java:213)
+	at adoptionbmp.ContextCreator.build(ContextCreator.java:388)
+	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+	at repast.simphony.ui.RSApplication.initSim(RSApplication.java:157)
+	at repast.simphony.ui.action.InitRun.actionPerformed(InitRun.java:17)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+ERROR [AWT-EventQueue-0] 2021-01-29 16:31:05,544 repast.simphony.ui.RSApplication - Scenario Load Error
+repast.simphony.scenario.ScenarioLoadException: Unable to convert parameter type. Please use a convertor.
+	at repast.simphony.scenario.ScenarioLoader.load(ScenarioLoader.java:220)
+	at repast.simphony.ui.RSApplication.open(RSApplication.java:359)
+	at repast.simphony.ui.RSAppConfigurator.postWindowOpen(RSAppConfigurator.java:39)
+	at saf.core.ui.GUICreatorDelegate.runDisplay(GUICreatorDelegate.java:216)
+	at saf.core.ui.GUICreator$1.run(GUICreator.java:18)
+	at simphony.util.ThreadUtilities$Runner.run(ThreadUtilities.java:33)
+	at simphony.util.ThreadUtilities.runInEventThread(ThreadUtilities.java:47)
+	at saf.core.ui.GUICreator.runDisplay(GUICreator.java:16)
+	at repast.simphony.ui.RSUIPlugin$1.run(RSUIPlugin.java:101)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: org.xml.sax.SAXException: Unable to convert parameter type. Please use a convertor.
+repast.simphony.parameter.ParameterFormatException: Parameter element is missing required attributes
+	at repast.simphony.parameter.ParametersParser.startElement(ParametersParser.java:128)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1359)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:328)
+	at repast.simphony.parameter.ParametersParser.<init>(ParametersParser.java:46)
+	at repast.simphony.scenario.ScenarioLoader.load(ScenarioLoader.java:168)
+	... 22 more
+Caused by: repast.simphony.parameter.ParameterFormatException: Parameter element is missing required attributes
+	at repast.simphony.parameter.ParametersParser.startElement(ParametersParser.java:75)
+	... 36 more
+ERROR [AWT-EventQueue-0] 2021-01-29 16:35:09,818 repast.simphony.ui.RSApplication - Scenario Load Error
+repast.simphony.scenario.ScenarioLoadException: Unable to convert parameter type. Please use a convertor.
+	at repast.simphony.scenario.ScenarioLoader.load(ScenarioLoader.java:220)
+	at repast.simphony.ui.RSApplication.open(RSApplication.java:359)
+	at repast.simphony.ui.RSAppConfigurator.postWindowOpen(RSAppConfigurator.java:39)
+	at saf.core.ui.GUICreatorDelegate.runDisplay(GUICreatorDelegate.java:216)
+	at saf.core.ui.GUICreator$1.run(GUICreator.java:18)
+	at simphony.util.ThreadUtilities$Runner.run(ThreadUtilities.java:33)
+	at simphony.util.ThreadUtilities.runInEventThread(ThreadUtilities.java:47)
+	at saf.core.ui.GUICreator.runDisplay(GUICreator.java:16)
+	at repast.simphony.ui.RSUIPlugin$1.run(RSUIPlugin.java:101)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: org.xml.sax.SAXException: Unable to convert parameter type. Please use a convertor.
+repast.simphony.parameter.ParameterFormatException: Parameter element is missing required attributes
+	at repast.simphony.parameter.ParametersParser.startElement(ParametersParser.java:128)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1359)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:328)
+	at repast.simphony.parameter.ParametersParser.<init>(ParametersParser.java:46)
+	at repast.simphony.scenario.ScenarioLoader.load(ScenarioLoader.java:168)
+	... 22 more
+Caused by: repast.simphony.parameter.ParameterFormatException: Parameter element is missing required attributes
+	at repast.simphony.parameter.ParametersParser.startElement(ParametersParser.java:75)
+	... 36 more
+ERROR [AWT-EventQueue-0] 2021-01-29 16:43:56,187 repast.simphony.ui.widget.NetworkExportDialog - Error while exporting network
+java.io.FileNotFoundException: /Users/ran/eclipse-workspace/adoptionbmp/data (Is a directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at java.io.FileWriter.<init>(FileWriter.java:90)
+	at repast.simphony.ui.widget.NetworkExportDialog.save(NetworkExportDialog.java:123)
+	at repast.simphony.ui.widget.NetworkExportDialog.access$0(NetworkExportDialog.java:114)
+	at repast.simphony.ui.widget.NetworkExportDialog$2.actionPerformed(NetworkExportDialog.java:92)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1084)
+	at java.awt.Component.show(Component.java:1671)
+	at java.awt.Component.setVisible(Component.java:1623)
+	at java.awt.Window.setVisible(Window.java:1014)
+	at java.awt.Dialog.setVisible(Dialog.java:1005)
+	at repast.simphony.ui.action.ExportNetworks.actionPerformed(ExportNetworks.java:35)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+	at com.apple.laf.ScreenMenuItem.actionPerformed(ScreenMenuItem.java:125)
+	at java.awt.MenuItem.processActionEvent(MenuItem.java:669)
+	at java.awt.MenuItem.processEvent(MenuItem.java:628)
+	at java.awt.MenuComponent.dispatchEventImpl(MenuComponent.java:357)
+	at java.awt.MenuComponent.dispatchEvent(MenuComponent.java:345)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:763)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  [AWT-EventQueue-0] 2021-01-29 16:48:47,425 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /Users/ran/eclipse-workspace/adoptionbmp/output/config.props
+INFO  [AWT-EventQueue-0] 2021-01-29 16:48:47,585 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/Users/ran/eclipse-workspace/adoptionbmp/batch/batch_params.xml to
+	/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/unrolledParamFile.txt
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:49:06,184 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/ran_localhost1899844871668285423.zip to 
+/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960540385 ...
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:49:06,593 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:49:06,598 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0.1035
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:49:06,599 repast.simphony.batch.ssh.LocalSession - Unzipping model /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960540385/ran_localhost1899844871668285423.zip
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:49:08,154 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-34] 2021-01-29 16:49:30,281 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.97
+INFO  [Thread-34] 2021-01-29 16:49:30,429 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.296
+INFO  [Thread-34] 2021-01-29 16:49:31,472 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.4492
+INFO  [Thread-34] 2021-01-29 16:49:31,536 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.4756
+INFO  [Thread-34] 2021-01-29 16:49:31,878 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.5043
+INFO  [Thread-34] 2021-01-29 16:49:31,932 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.5191
+INFO  [Thread-34] 2021-01-29 16:49:32,397 repast.simphony.batch.ssh.LocalSession - ==> shapefile load succuss...
+INFO  [Thread-34] 2021-01-29 16:49:32,430 repast.simphony.batch.ssh.LocalSession - ==> Production data loading successly
+INFO  [Thread-34] 2021-01-29 16:49:32,797 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...1
+INFO  [AWT-EventQueue-0] 2021-01-29 16:49:35,757 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /Users/ran/eclipse-workspace/adoptionbmp/output/config.props
+INFO  [AWT-EventQueue-0] 2021-01-29 16:49:35,760 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/Users/ran/eclipse-workspace/adoptionbmp/batch/batch_params.xml to
+	/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/unrolledParamFile.txt
+INFO  [AWT-EventQueue-0] 2021-01-29 16:49:37,548 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /Users/ran/eclipse-workspace/adoptionbmp/output/config.props
+INFO  [AWT-EventQueue-0] 2021-01-29 16:49:37,551 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/Users/ran/eclipse-workspace/adoptionbmp/batch/batch_params.xml to
+	/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/unrolledParamFile.txt
+INFO  [Thread-34] 2021-01-29 16:49:41,602 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...101
+INFO  [Thread-34] 2021-01-29 16:49:48,019 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...201
+INFO  [Thread-34] 2021-01-29 16:49:53,333 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...301
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:49:55,768 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/ran_localhost4362236151343461630.zip to 
+/var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960589083 ...
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:49:56,299 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:49:56,299 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0.1203
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:49:56,300 repast.simphony.batch.ssh.LocalSession - Unzipping model /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960589083/ran_localhost4362236151343461630.zip
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:49:57,357 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-34] 2021-01-29 16:49:58,873 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...401
+INFO  [Thread-34] 2021-01-29 16:50:05,852 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...501
+INFO  [pool-224-thread-1] 2021-01-29 16:50:08,182 repast.simphony.batch.ssh.LocalDonePoller - Polled /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960540385 for DONE:  no
+INFO  [Thread-34] 2021-01-29 16:50:12,651 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...601
+INFO  [Thread-34] 2021-01-29 16:50:19,857 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...701
+INFO  [Thread-35] 2021-01-29 16:50:26,684 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.97
+INFO  [Thread-35] 2021-01-29 16:50:26,906 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.296
+INFO  [Thread-34] 2021-01-29 16:50:27,831 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...801
+INFO  [Thread-35] 2021-01-29 16:50:28,709 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.4492
+INFO  [Thread-35] 2021-01-29 16:50:28,908 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.4756
+INFO  [Thread-35] 2021-01-29 16:50:29,223 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.5043
+INFO  [Thread-35] 2021-01-29 16:50:29,276 repast.simphony.batch.ssh.LocalSession - Invalid geometry: EssexSimplified.5191
+INFO  [Thread-35] 2021-01-29 16:50:30,012 repast.simphony.batch.ssh.LocalSession - ==> shapefile load succuss...
+INFO  [Thread-35] 2021-01-29 16:50:30,051 repast.simphony.batch.ssh.LocalSession - ==> Production data loading successly
+INFO  [Thread-35] 2021-01-29 16:50:30,438 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...1
+INFO  [Thread-34] 2021-01-29 16:50:37,269 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...901
+INFO  [Thread-35] 2021-01-29 16:50:38,716 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...101
+INFO  [Thread-34] 2021-01-29 16:50:39,880 repast.simphony.batch.ssh.LocalSession - Start simulation for this agent :1 at 2016
+INFO  [Thread-34] 2021-01-29 16:50:39,913 repast.simphony.batch.ssh.LocalSession - ERROR [main] 16:50:39,906 repast.simphony.batch.InstanceRunner - Error while running model
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - java.lang.UnsatisfiedLinkError: no lpsolve55j in java.library.path
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1867)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at java.lang.System.loadLibrary(System.java:1122)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at lpsolve.LpSolve.<clinit>(LpSolve.java:275)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at adoptionbmp.Agent.production(Agent.java:159)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at adoptionbmp.ContextCreator.build(ContextCreator.java:197)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+INFO  [Thread-34] 2021-01-29 16:50:39,915 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+INFO  [Thread-34] 2021-01-29 16:50:39,916 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.OneRunBatchRunner.run(OneRunBatchRunner.java:101)
+INFO  [Thread-34] 2021-01-29 16:50:39,917 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.InstanceRunner.run(InstanceRunner.java:195)
+INFO  [Thread-34] 2021-01-29 16:50:39,917 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.InstanceRunner.main(InstanceRunner.java:217)
+INFO  [Thread-35] 2021-01-29 16:50:43,474 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...201
+INFO  [Thread-35] 2021-01-29 16:50:47,221 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...301
+INFO  [Thread-35] 2021-01-29 16:50:50,842 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...401
+INFO  [Thread-35] 2021-01-29 16:50:55,261 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...501
+INFO  [pool-225-thread-1] 2021-01-29 16:50:57,368 repast.simphony.batch.ssh.LocalDonePoller - Polled /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960589083 for DONE:  no
+INFO  [Thread-35] 2021-01-29 16:51:00,064 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...601
+INFO  [Thread-35] 2021-01-29 16:51:04,960 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...701
+INFO  [pool-224-thread-1] 2021-01-29 16:51:08,193 repast.simphony.batch.ssh.LocalDonePoller - Polled /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960540385 for DONE:  yes
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:51:08,194 repast.simphony.batch.ssh.SessionsDriver - Run Time: 2.0266
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:51:08,235 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960540385
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:51:08,304 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /Users/ran/eclipse-workspace/adoptionbmp/output
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:51:08,304 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0.0018
+INFO  [SwingWorker-pool-223-thread-1] 2021-01-29 16:51:08,304 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 2.1322
+INFO  [Thread-35] 2021-01-29 16:51:10,144 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...801
+INFO  [Thread-35] 2021-01-29 16:51:15,882 repast.simphony.batch.ssh.LocalSession - ==> agent create succussfully...901
+INFO  [Thread-35] 2021-01-29 16:51:17,279 repast.simphony.batch.ssh.LocalSession - Start simulation for this agent :1 at 2016
+INFO  [Thread-35] 2021-01-29 16:51:17,290 repast.simphony.batch.ssh.LocalSession - ERROR [main] 16:51:17,288 repast.simphony.batch.InstanceRunner - Error while running model
+INFO  [Thread-35] 2021-01-29 16:51:17,290 repast.simphony.batch.ssh.LocalSession - java.lang.UnsatisfiedLinkError: no lpsolve55j in java.library.path
+INFO  [Thread-35] 2021-01-29 16:51:17,290 repast.simphony.batch.ssh.LocalSession - 	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1867)
+INFO  [Thread-35] 2021-01-29 16:51:17,290 repast.simphony.batch.ssh.LocalSession - 	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at java.lang.System.loadLibrary(System.java:1122)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at lpsolve.LpSolve.<clinit>(LpSolve.java:275)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at adoptionbmp.Agent.production(Agent.java:159)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at adoptionbmp.ContextCreator.build(ContextCreator.java:197)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+INFO  [Thread-35] 2021-01-29 16:51:17,291 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+INFO  [Thread-35] 2021-01-29 16:51:17,292 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+INFO  [Thread-35] 2021-01-29 16:51:17,292 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+INFO  [Thread-35] 2021-01-29 16:51:17,292 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+INFO  [Thread-35] 2021-01-29 16:51:17,293 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+INFO  [Thread-35] 2021-01-29 16:51:17,294 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+INFO  [Thread-35] 2021-01-29 16:51:17,294 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+INFO  [Thread-35] 2021-01-29 16:51:17,294 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.OneRunBatchRunner.run(OneRunBatchRunner.java:101)
+INFO  [Thread-35] 2021-01-29 16:51:17,294 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.InstanceRunner.run(InstanceRunner.java:195)
+INFO  [Thread-35] 2021-01-29 16:51:17,294 repast.simphony.batch.ssh.LocalSession - 	at repast.simphony.batch.InstanceRunner.main(InstanceRunner.java:217)
+INFO  [pool-225-thread-1] 2021-01-29 16:51:57,371 repast.simphony.batch.ssh.LocalDonePoller - Polled /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960589083 for DONE:  yes
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:51:57,376 repast.simphony.batch.ssh.SessionsDriver - Run Time: 2.0179
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:51:57,381 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /var/folders/6d/bjt6wybd4mq8vy7_7kp5j2w40000gn/T/simphony_model_1611960589083
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:51:57,395 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /Users/ran/eclipse-workspace/adoptionbmp/output
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:51:57,395 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0.0003
+INFO  [SwingWorker-pool-223-thread-2] 2021-01-29 16:51:57,396 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 2.1388

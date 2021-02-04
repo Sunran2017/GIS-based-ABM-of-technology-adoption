@@ -1,8 +1,11 @@
 package adoptionbmp;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -26,6 +29,17 @@ import repast.simphony.space.gis.Geography;
 public class Sup {
 	
 	
+	
+	//create file
+	
+	
+	public static void fileCreate(String filename) throws IOException {
+		File file = new File(filename);
+		if(!file.exists()){
+		  file.createNewFile();
+		}
+	}
+	
 	//if file does exists, then create it
 	public static void fileCheck(String filename) throws IOException {
 		File file = new File(filename);
@@ -36,6 +50,9 @@ public class Sup {
 		file.createNewFile();
 		}	
 	}
+	
+	
+	
 	
 	
 	//load file
@@ -169,7 +186,22 @@ public class Sup {
 		}	
 	}	
 	
-	
+	public static void writeText(String filename, String writeContext) {
+		
+		try {
+	    	  //true = append file
+	    	  FileWriter fileWritter = new FileWriter(filename, true);
+	    	  BufferedWriter writeText = new BufferedWriter(fileWritter);
+	    	  writeText.newLine();
+	    	  writeText.write(writeContext); 
+	    	  writeText.close();
+	    	  //System.out.println("Write Done");
+			}catch(FileNotFoundException e){
+				System.out.println("cant find file");
+			}catch(IOException e){
+				System.out.println("file error");		  
+	      }	
+	}
 	
 	// getNormalDouble
 	public static double getNormalDouble(double mean, double sd ) {

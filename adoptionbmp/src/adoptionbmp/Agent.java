@@ -25,7 +25,6 @@ import repast.simphony.engine.schedule.ScheduledMethod;
  * 
  *Autonomous agents with various characteristics;
  *
- *
  * 
  * Agents consider adoption decision following two steps:
  * 
@@ -62,7 +61,8 @@ public class Agent {
 	public Map<Integer, Double>		revenue = new HashMap<>(); 			//Revenue in current year
 	public Map<Integer, Double>		profit = new HashMap<>();   		//profit in current year
 	public Map<Integer, Double>		profitUpdate = new HashMap<>(); 	//profit after CDSI adoption
-	public Map<Integer, Double>	 	npv ;								//Net present value of CDSI investment
+	
+
 	
 	
 	//age varation
@@ -77,7 +77,7 @@ public class Agent {
 		
 	public boolean					adoptedCDSI = false;	// True if adopted CDSI
 	
-	public int						adoptedYear;		//The year when adoptedCDSI
+	public int						adoptedYear = 0;		//The year when adoptedCDSI
 	
 	
 	public boolean 					netAdopt;			//false if non-adoption within networking, true if adopted by network 
@@ -151,7 +151,10 @@ public class Agent {
 		curObj[1] = Production.curRevSoy - Production.curSoyCost;
 		curObj[2] = Production.curRevWheat - Production.curWheatCost;
 		
-		System.out.println("Start simulation for this agent :" + id + " at "+ currentYear);
+		if(Integer.valueOf(id) % 100 ==0) {
+			System.out.println("Start simulation for this agent :" + id + " at "+ currentYear);	
+		}
+		
 		
 		// TODO Auto-generated method stub
 			try {
@@ -258,105 +261,97 @@ public class Agent {
 	
 	//Step 2: Adoption;	
 
-	
 	@ScheduledMethod(start = 1, interval = 1)
-	public void adoptionDecision() throws Exception { 
-		
+	public void adoptionDecision() throws Exception { 	
 		//FD diffusion 
+		diffusionFD();
 		
-		if(!adoptedFD && (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin) 
-						&& this.rateFDwithNet() > Constants.FDRateThreshold) {
-			adoptedFD = true;	
+		//Base Scenario
+		//basescenario(0);
+	
+		//adoption considering environmental awareness
+		//adoptionWithEnv();
+		
+		
+		//costShare
+		
+		costShare(ContextCreator.costShare, ContextCreator.intrSup);
+		
+		//initial installation cost share
+		
+		
+		//Interest support
+		/*
+		for(int i = 1; i <=10; i++) {
+			costSharescenario(0,i);
 		}
-		//Base adoption
-		baseSenario(0);
+		*/
 		
-		//Base Adoption Networking Scenario: including Learning costs
-		adoptionWithLearningCosts();
-		
-		
-		//Policy 
-		if(Policy.policySenario == 1) {
-			for(int i = 1; i <= 10;i++) {
-				costShareSenario(i);
-			}	
-		}else if (Policy.policySenario == 2) {
-			for(int i = 1; i <= 10;i++) {
-				costShareSenario(i);
-			}
-		}
+		//Base Adoption Networking Scenario:
+		adoptionWithNet();	
 		
 		curYear += 1;	
 	}
-	
-	
-	
-	
-	
+		
+
 	
 	//Base scenario 1calculate npv and decide adoption without network
 	
-	public void baseSenario(int cnt) throws Exception {
-		if(Adoption.type == 1) {
-			this.calNpv(Adoption.manual,0,0);
-			adoption("manual",cnt);
-		}else if(Adoption.type == 2) {
-			this.calNpv(Adoption.auto,0,0);
-			adoption("auto",cnt);
-		}else {
-			this.calNpv(Adoption.remoteControl,0,0);
-			adoption("remoteControl",cnt);	
-		}	
-	}
 	
 	
-	
-	//cost-share scenario  
-	
-	public void costShareSenario(int cnt) throws Exception{
+	public void basescenario(int cnt) throws Exception {
+		Map<Integer, Double> npv  = new HashMap<Integer, Double>();	
 		
 		if(Adoption.type == 1) {
-			this.calNpv(Adoption.manual,Policy.shareRate[cnt],0);
-			adoption("manual",cnt);
+			npv = this.calNpv(Adoption.manual,0,0);
+			adoption(npv, "manual",String.valueOf(cnt));
 		}else if(Adoption.type == 2) {
-			this.calNpv(Adoption.auto,Policy.shareRate[cnt],0);
-			adoption("auto",cnt);
+			npv = this.calNpv(Adoption.auto,0,0);
+			adoption(npv, "auto",String.valueOf(cnt));
 		}else {
-			this.calNpv(Adoption.remoteControl,Policy.shareRate[cnt],0);
-			adoption("remoteControl",cnt);	
+			npv = this.calNpv(Adoption.remoteControl,0,0);
+			adoption(npv, "remoteControl",String.valueOf(cnt));	
 		}	
 	}
 	
-	//interest rate support scenario
-	public void intrSupSenario(int cnt) throws Exception{
+	
+	//cost-share and low interest rate scenario  
+	
+	public void costShare(int cnt1, int cnt2) throws Exception{
+		Map<Integer, Double> npv  = new HashMap<Integer, Double>();	
+		if(Adoption.type == 1) {
+			npv = this.calNpv(Adoption.manual,Policy.shareRate[cnt1], Policy.intrSup[cnt2]);
+			adoption(npv,"manual", String.valueOf(cnt1) +"+" + String.valueOf(cnt2));
+		}else if(Adoption.type == 2) {
+			npv = this.calNpv(Adoption.auto,Policy.shareRate[cnt1],Policy.intrSup[cnt2]);
+			adoption(npv, "auto",String.valueOf(cnt1) +"+" + String.valueOf(cnt2));
+		}else {
+			npv = this.calNpv(Adoption.remoteControl,Policy.shareRate[cnt1],Policy.intrSup[cnt2]);
+			adoption(npv, "remoteControl",String.valueOf(cnt1) +"+" + String.valueOf(cnt2));	
+		}	
+	}
+	
 
-		if(Adoption.type == 1) {
-			this.calNpv(Adoption.manual,0,Policy.intrSup[cnt]);
-			adoption("manual",cnt);
-		}else if(Adoption.type == 2) {
-			this.calNpv(Adoption.auto,0,Policy.intrSup[cnt]);
-			adoption("auto",cnt);
-		}else {
-			this.calNpv(Adoption.remoteControl,0,Policy.intrSup[cnt]);
-			adoption("remoteControl",cnt);	
-		}	
-		
-		
-		
+			
+
+	//Network
+	private void adoptionWithNet() {
+		if(!adoptedCDSI && (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin) 
+				&& this.rateCDSIwithNet() > Constants.CDSIRateThreshold) {
+			adoptedCDSI = true;	
+		}
 	}
-	
-	
-	
-	
+
 	
 
 	// Calculate npv of CDSI investment
-	public void calNpv(double[] arr, double shareRate,double investSubRate) throws Exception {
+	public  Map<Integer, Double> calNpv(double[] arr, double shareRate, double investSubRate) throws Exception {
 
+		Map<Integer, Double> npv = new HashMap<Integer, Double>();
+		
 		double invReturn = 0;
 		double invCostPerAcre = 0;
 		double annalCostPerAcre = 0;
-		npv = new HashMap<>();
 		int remainYear = endYear - curYear;
 		
 		if(farmSize < 10) {
@@ -376,8 +371,10 @@ public class Agent {
 		if(remainYear >= Constants.lifeExpect) {
 			for(int i = curYear; i <= curYear + Constants.lifeExpect; i++) {
 				//System.out.println( id + "\n"+ "profit from "+ i + "\n"+ profit.get(i));
-				if(profit.get(i) != null) {
+				if(profit.get(i) != null && profit.get(i) >=0) {
 					invReturn += Constants.diffYields * profit.get(i)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), i-curYear);			
+				}else {
+					invReturn += Constants.diffYields * revenue.get(i)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), i-curYear);	
 				}
 			}
 
@@ -388,26 +385,30 @@ public class Agent {
 			int cnt = 0;
 			double avgReturn = 0;
 			for(int j = curYear; j <= endYear; j++) {
-				if(profit.get(j) != null) {
+				if(profit.get(j) != null && profit.get(j) >=0) {
 					invReturn += Constants.diffYields * profit.get(j)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), j-curYear);
-								
-				}	
+				}else {
+					invReturn += Constants.diffYields * revenue.get(j)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), j-curYear);	
+				}
 				cnt +=1;
 			}
 			
 			avgReturn = invReturn/cnt;
-			invReturn = invReturn + avgReturn * (Constants.lifeExpect - remainYear) - annalCostPerAcre  * Constants.lifeExpect * farmSize ;
-	
+			invReturn = invReturn + avgReturn * (Constants.lifeExpect - remainYear) - (annalCostPerAcre * Constants.lifeExpect) * farmSize ;
 			npv.put(curYear, invReturn - totalInvCost);	
 		}
-
+		
 		//System.out.println(id + "\n" + "npv from " + curYear + "\n" + npv.get(curYear));
+		return npv;
+
 	}
 	
 	//Adoption base:
-	public void adoption(String str, int cnt) {
+	public void adoption(Map<Integer, Double> npv,String str, String name) {
+		
 		double curNpv = npv.get(curYear);
 		
+	
 		// adoption condition based on operation
 		double profitMargin = profit.get(curYear)/revenue.get(curYear);
 		
@@ -419,7 +420,7 @@ public class Agent {
 		}
 		
 		try {
-			writeAdoption(Constants.pathAdoption1 + String.valueOf(cnt) +  ".csv");
+			writeAdoption(Constants.pathAdoption1 + name +  ".csv", curNpv,adoptedYear, adoptedCDSI);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -429,20 +430,17 @@ public class Agent {
 	
 	
 	//Adoption with learning costs:
-	private void adoptionWithLearningCosts() {
+	private void adoptionWithEnv() {
 		// TODO Auto-generated method stub
 		
 	}
 	
 	
-	
-	
-	
 
-	public void writeAdoption(String path) throws IOException{
+	public void writeAdoption(String path, double curNpv, double adoptedYear, boolean adoptedCDSI) throws IOException{
 		
 		String writeContext = id + "," + curYear + "," + adoptedCDSI 
-				+ "," + npv.get(curYear)
+				+ "," + curNpv
 				+ "," + profit.get(curYear)
 				+ "," + farmSize
 				+ "," + adoptedYear
@@ -462,6 +460,15 @@ public class Agent {
 		
 	}
 	
+	
+	
+	
+	private void diffusionFD() {
+		if(!adoptedFD && (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin) 
+				&& this.rateFDwithNet() > Constants.FDRateThreshold) {
+			adoptedFD = true;	
+		}	
+	}
 	
 	
 	public double rateFDwithNet() {
@@ -486,14 +493,20 @@ public class Agent {
 	
 	public double rateCDSIwithNet() {
 		 List<Agent> netList= ContextCreator.neighbourMap.get(this);
+		 double rate = 0;
+		 
+		 if(netList == null || netList.size() == 0) {
+			 return rate; 
+		 }
+		 
 		 int cnt = 0;
 		 for(int i = 0; i < netList.size(); i++) {
 			 if(netList.get(i).adoptedCDSI) { 
 				 cnt ++;
 			 }	  
 		 }
-		 double rate = cnt / netList.size();
-		 
+		
+		 rate = cnt / netList.size();
 		 return rate;
 	}
 

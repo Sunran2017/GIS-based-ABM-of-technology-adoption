@@ -18,8 +18,9 @@ public interface Constants {
 	
 	// file path for output
 	
+	String runRecord = "/Users/ran/ABM/runRec.csv";
 	String pathProduction = "/Users/ran/ABM/ProductionResults" + String.valueOf(ContextCreator.climateChange) + String.valueOf(ContextCreator.dist) + ".csv";   	// production results path
-	String pathAdoption1 = "/Users/ran/ABM/adoptionResults" + String.valueOf(Policy.policySenario) + "_";														// adoption results path
+	String pathAdoption1 = "/Users/ran/ABM/adoptionResults" + String.valueOf(ContextCreator.policySenario) +  "_" ;														// adoption results path
 	String pathAdoption2 = "/Users/ran/ABM/adoptionResults2";					// adoption results path
 	String pathAdoption3 = "/Users/ran/ABM/adoptionResults3";					// adoption results path
 	
@@ -156,9 +157,9 @@ public interface Constants {
 	
 	
 	
-	//CDSI investment return rate
+	//CDSI investment return rate 8.78%
 	
-	double investReturnRate = 0.0495;
+	double investReturnRate = 0.0878;
 	
 	
 	//investment cost
@@ -223,12 +224,13 @@ public interface Constants {
 	
 	//retire
 	
-	double avgRetireAge = 70;
+	double avgRetireAge = 60;
 	double devRetireAge = 2;
 	int ageGap = 20;
 	int avgAge = 58;
 	
 	//FD
 	double FDRateThreshold = 0.6;
+	double CDSIRateThreshold = 0.5;
 	
 }
