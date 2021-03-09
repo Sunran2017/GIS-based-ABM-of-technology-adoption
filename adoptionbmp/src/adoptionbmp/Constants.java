@@ -161,6 +161,10 @@ public interface Constants {
 	
 	double investReturnRate = 0.0878;
 	
+	//loan rate
+	
+	double loanRate = 0.035;
+	
 	
 	//investment cost
 	
@@ -211,15 +215,13 @@ public interface Constants {
 	double optionalSoyCostRatio = 0.15;
 	double optionalWheatCostRatio = 0.15;
 	
+	// critical values for extension participation percentage
 	
-	//loan ratio
-	
-	double invLoanRatio1 = 0.9;
-	double invLoanRatio2 = 0.8;
-	double invLoanRatio3 = 0.7;
-	double invLoanRatio4 = 0.6;
-	double invLoanRatio5 = 0.5;
-
+	double meanExt1 = -1.281552;
+	double meanExt2 = -0.841621;
+	double meanExt3 = -0.524401;
+	double meanExt5 = 0;
+	double meanExt7 = 0.524401;
 
 	
 	//retire

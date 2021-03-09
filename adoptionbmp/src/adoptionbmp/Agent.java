@@ -273,12 +273,17 @@ public class Agent {
 		//adoptionWithEnv();
 		
 		
-		//costShare
+		//costShare and low-interest program
 		
 		costShare(ContextCreator.costShare, ContextCreator.intrSup);
 		
-		//initial installation cost share
 		
+		//Extension
+		if(curYear < ContextCreator.startYear + 4 && ContextCreator.extension != 0) {
+			Extension(ContextCreator.extension);	
+		}
+		
+		//initial installation cost share
 		
 		//Interest support
 		/*
@@ -286,6 +291,7 @@ public class Agent {
 			costSharescenario(0,i);
 		}
 		*/
+
 		
 		//Base Adoption Networking Scenario:
 		adoptionWithNet();	
@@ -293,11 +299,15 @@ public class Agent {
 		curYear += 1;	
 	}
 		
+	
+	
+	
+	
+	
 
 	
-	//Base scenario 1calculate npv and decide adoption without network
-	
-	
+
+	//Base scenario with calculating npv and deciding adoption without network
 	
 	public void basescenario(int cnt) throws Exception {
 		Map<Integer, Double> npv  = new HashMap<Integer, Double>();	
@@ -315,6 +325,16 @@ public class Agent {
 	}
 	
 	
+	//Network
+	private void adoptionWithNet() {
+		if(!adoptedCDSI && (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin) 
+				&& this.rateCDSIwithNet() > Constants.CDSIRateThreshold) {
+			adoptedCDSI = true;	
+		}
+	}
+
+	
+	
 	//cost-share and low interest rate scenario  
 	
 	public void costShare(int cnt1, int cnt2) throws Exception{
@@ -330,18 +350,47 @@ public class Agent {
 			adoption(npv, "remoteControl",String.valueOf(cnt1) +"+" + String.valueOf(cnt2));	
 		}	
 	}
+		
 	
-
-			
-
-	//Network
-	private void adoptionWithNet() {
-		if(!adoptedCDSI && (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin) 
-				&& this.rateCDSIwithNet() > Constants.CDSIRateThreshold) {
-			adoptedCDSI = true;	
+	//Extension scenario 
+	private void Extension(int extension) {
+		double mean = 0;
+		
+		if (extension == 1) {
+			mean = Constants.meanExt1;
+		}else if(extension == 2) {
+			mean = Constants.meanExt2;
+		}else if (extension ==3) {
+			mean = Constants.meanExt3;
+		}else if(extension == 5) {
+			mean = Constants.meanExt5;
+		}else if(extension == 7) {
+			mean = Constants.meanExt7;
 		}
+		
+		
+		else {
+			System.out.print("Extension scenario can not be initialized");
+		}
+		
+		double extPar = Sup.getNormalDouble(mean,1);
+		
+		if(!adoptedCDSI && extPar > 0 
+			&& (this.profit.get(curYear)/this.revenue.get(curYear) > Constants.highProfitMargin)) {
+			adoptedCDSI = true;	
+		}		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	// Calculate npv of CDSI investment
@@ -351,19 +400,19 @@ public class Agent {
 		
 		double invReturn = 0;
 		double invCostPerAcre = 0;
-		double annalCostPerAcre = 0;
+		double annualCostPerAcre = 0;
 		int remainYear = endYear - curYear;
 		
 		if(farmSize < 10) {
 			invCostPerAcre = arr[0];
-			annalCostPerAcre  = arr[1];	
+			annualCostPerAcre  = arr[1];	
 			
 		}else if(farmSize >= 10 && farmSize < 23) {
 			invCostPerAcre = arr[2];
-			annalCostPerAcre  = arr[3];
+			annualCostPerAcre  = arr[3];
 		}else if(farmSize >= 23) {
 			invCostPerAcre = arr[4];
-			annalCostPerAcre  = arr[5];
+			annualCostPerAcre  = arr[5];
 		}		
 		
 		totalInvCost = invCostPerAcre * farmSize * (1 - shareRate);
@@ -378,7 +427,7 @@ public class Agent {
 				}
 			}
 
-			invReturn = invReturn - annalCostPerAcre * Constants.lifeExpect * farmSize;
+			invReturn = invReturn - annualCostPerAcre * Constants.lifeExpect * farmSize;
 			npv.put(curYear, invReturn-totalInvCost);
 			
 		}else {
@@ -386,15 +435,15 @@ public class Agent {
 			double avgReturn = 0;
 			for(int j = curYear; j <= endYear; j++) {
 				if(profit.get(j) != null && profit.get(j) >=0) {
-					invReturn += Constants.diffYields * profit.get(j)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), j-curYear);
+					invReturn += Constants.diffYields * profit.get(j)/Math.pow(1 + Constants.investReturnRate - (1-investSubRate)*Constants.loanRate, j-curYear);
 				}else {
-					invReturn += Constants.diffYields * revenue.get(j)/Math.pow(1 + Constants.investReturnRate * (1-investSubRate), j-curYear);	
+					invReturn += Constants.diffYields * revenue.get(j)/Math.pow(1 + Constants.investReturnRate - (1-investSubRate)*Constants.loanRate, j-curYear);	
 				}
 				cnt +=1;
 			}
 			
 			avgReturn = invReturn/cnt;
-			invReturn = invReturn + avgReturn * (Constants.lifeExpect - remainYear) - (annalCostPerAcre * Constants.lifeExpect) * farmSize ;
+			invReturn = invReturn + avgReturn * (Constants.lifeExpect - remainYear) - (annualCostPerAcre * Constants.lifeExpect) * farmSize ;
 			npv.put(curYear, invReturn - totalInvCost);	
 		}
 		

@@ -51,6 +51,7 @@ public class ContextCreator implements ContextBuilder<Object> {
 	static int costShare = 0;				// costShare program scenarios
 	static int intrSup = 0;					//interest credits program scenarios
 	static int policySenario = 0;
+	static int extension = 3; 				// extension activities reach to what percentage of farm (10%, 20%, 30%) 
 	
 
 	//networking

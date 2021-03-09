@@ -96,7 +96,7 @@ public class Production {
 		curSoyPrice = soyPrice.get(currentYear);
 		curWheatPrice = wheatPrice.get(currentYear);
 		
-		// after specific year, yields will be adjusted based on effects of stock first and random generated using short term crop prices sd
+		// after specific year, prices will be adjusted based on effects of stock first and random generated using short term crop prices sd
 		
 		
 		if(currentYear > ContextCreator.startYear + yr) {
@@ -155,9 +155,9 @@ public class Production {
 		//consider climate change impact on crop revenue:
 					
 		if(ContextCreator.climateChange) {
-			curRevCorn = Production.curCornPrice * Production.curCornYields * (1 + Production.deltaCornYields / 100 );
-			curRevSoy = Production.curSoyPrice * Production.curSoyYields * (1 + Production.deltaSoyYields / 100);
-			curRevWheat = Production.curWheatPrice * Production.curWheatYields * (1 + Production.deltaWheatYields / 100);
+			curRevCorn = Production.curCornPrice * Production.curCornYields * (1 + Production.deltaCornYields);
+			curRevSoy = Production.curSoyPrice * Production.curSoyYields * (1 + Production.deltaSoyYields);
+			curRevWheat = Production.curWheatPrice * Production.curWheatYields * (1 + Production.deltaWheatYields);
 		}else {
 			curRevCorn = Production.curCornPrice * Production.curCornYields;
 			curRevSoy = Production.curSoyPrice * Production.curSoyYields;
